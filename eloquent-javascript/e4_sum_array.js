@@ -1,9 +1,8 @@
 // 4. Data Structures: Objects and Arrays
 
 // The sum of a range
-function range(start, end, step = undefined) {
+function range(start, end, step = start < end ? 1 : -1) {
     let numbers = [];
-    if (!step) step = start < end ? 1 : -1;
     const endCondition = step > 0 ? (i) => i <= end : (i) => i >= end;
     for (let i = start; endCondition(i); i += step) {
         numbers.push(i);
